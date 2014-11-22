@@ -55,6 +55,7 @@ func init() {
   LogJsonFile = fmt.Sprintf("%s/%s.json", *LogJsonDir, DateString)
   LogCsvFile = fmt.Sprintf("%s/%s.csv", *LogCsvDir, DateString)
   if len(os.Args) <= 1{
+    fmt.Println("No other options selected, so enabling debug mode.")
     *Debug = true
   }
 }
