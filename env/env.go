@@ -17,9 +17,12 @@ const (
 )
 
 var (
-  DateString = time.Now().Local().Format(DATE_FORMAT)
-  TimestampString = time.Now().Local().Format(TIMESTAMP_FORMAT)
-  EpochString = time.Now().Unix()
+  // DateString = time.Now().Local().Format(DATE_FORMAT)
+  // TimestampString = time.Now().Local().Format(TIMESTAMP_FORMAT)
+  // EpochString = time.Now().Unix()
+  DateString string
+  TimestampString string
+  EpochString int64
   TimeForIdle *time.Duration
   SleepDuration *time.Duration
   Debug *bool
@@ -51,9 +54,9 @@ func init() {
   User = os.Getenv("USER")
   Host, _ = os.Hostname()
   flag.Parse()
-  LogFile = fmt.Sprintf("%s/%s.log", *LogDir, DateString)
-  LogJsonFile = fmt.Sprintf("%s/%s.json", *LogJsonDir, DateString)
-  LogCsvFile = fmt.Sprintf("%s/%s.csv", *LogCsvDir, DateString)
+  // LogFile = fmt.Sprintf("%s/%s.log", *LogDir, DateString)
+  // LogJsonFile = fmt.Sprintf("%s/%s.json", *LogJsonDir, DateString)
+  // LogCsvFile = fmt.Sprintf("%s/%s.csv", *LogCsvDir, DateString)
   if len(os.Args) <= 1{
     fmt.Println("No other options selected, so enabling debug mode.")
     *Debug = true

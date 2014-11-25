@@ -46,6 +46,9 @@ func main() {
     env.DateString = time.Now().Local().Format(env.DATE_FORMAT)
     env.TimestampString = time.Now().Local().Format(env.TIMESTAMP_FORMAT)
     env.EpochString = time.Now().Unix()
+    env.LogFile = fmt.Sprintf("%s/%s.log", *env.LogDir, env.DateString)
+    env.LogJsonFile = fmt.Sprintf("%s/%s.json", *env.LogJsonDir, env.DateString)
+    env.LogCsvFile = fmt.Sprintf("%s/%s.csv", *env.LogCsvDir, env.DateString)
 
     info, err := screensaver.QueryInfo(x, xproto.Drawable(screen.Root)).Reply()
     if err != nil {
